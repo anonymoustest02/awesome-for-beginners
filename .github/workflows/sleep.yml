@@ -1,0 +1,30 @@
+name: Pull Request Event
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+    job_11:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Print job name
+          run: echo "job_11"
+        - name: Sleep
+          run: sleep 20
+  
+    job_12:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Print job name
+          run: echo "job_12"
+        - name: Sleep
+          run: sleep 20
+  
+    job_13:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Print job name
+          run: echo "job_13"
+        - name: Sleep
+          run: sleep 20
