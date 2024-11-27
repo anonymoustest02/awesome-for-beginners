@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - '.github/**'
+      - '.github/workflows/invalid.yml'
       - 'data.json'
       - 'CONTRIBUTING.md'
 
