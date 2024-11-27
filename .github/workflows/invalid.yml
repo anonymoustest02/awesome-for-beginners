@@ -1,38 +1,32 @@
 name: Check on Invalid PR
 
 on:
-  pull_request_target:
+  pull_request:
     branches:
       - main
-    paths:
-      - '.github/**'
-      - 'data.json'
-      - 'CONTRIBUTING.md'
 
 jobs:
-  check:
+  job_18:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v6
-        with:
-           script: |
-            await github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: 'This PR is not valid. Please read [contributing guidelines](https://github.com/MunGell/awesome-for-beginners/blob/main/CONTRIBUTING.md).'
-            });
-            if (context.payload.pull_request.labels.indexOf('Invalid') === -1) {
-              await github.rest.issues.addLabels({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                labels: ['Invalid']
-              });
-            }
-            await github.rest.pulls.update({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.issue.number,
-              state: 'closed'
-            });
+      - name: Print job name
+        run: echo "job_18"
+      - name: Sleep
+        run: sleep 20
+
+  job_19:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print job name
+        run: echo "job_19"
+      - name: Sleep
+        run: sleep 20
+
+  job_20:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print job name
+        run: echo "job_20"
+      - name: Sleep
+        run: sleep 20
+      
