@@ -1,0 +1,22 @@
+name: Pull Request Event
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  job_1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: sleep1
+        run: sleep 10
+  job_2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: sleep5
+        run: sleep 10
+  job_3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: sleep5
+        run: sleep 10
